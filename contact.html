@@ -46,6 +46,15 @@
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
+	<script>
+		window.onload = function(){
+			var query = location.search.substring(1);
+			console.log(query);
+			var pair = query.split(';');
+			document.getElementById('result').innerHTML = pair[1];
+			document.getElementById('carImg').src = pair[2];
+		}
+	</script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -119,14 +128,15 @@
 		</div>
 	</nav>
 
-	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/bg.jpg);">
+	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/bg.JPG);">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="display-t">
 						<div class="display-tc animate-box fadeIn animated-fast" data-animate-effect="fadeIn">
-							<h1>Result</h1>
+							<h1 id="result">Result</h1>
+							<div> <img id = "carImg" /></div>
 							<h2>Want to know more about the result? <a href="services.html">Click Here</a></h2>
 						</div>
 					</div>
